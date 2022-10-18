@@ -1,8 +1,9 @@
 const  fetchImages = async () => {
+  console.log(process.env.REACT_APP_UNSPLASH_ACCESS_TOKEN)
   const res = await fetch('https://api.unsplash.com/photos/random', {
     // mode: 'cors',
     headers: {
-      'Authorization': 'Client-ID q0QKQFpa2DffR2h8Akz1ITaEzNTQi8c1gRyxewil-K4'
+      'Authorization': `Client-ID ${process.env.REACT_APP_UNSPLASH_ACCESS_TOKEN}`
     }
   })
   const imgArr = res.json()
