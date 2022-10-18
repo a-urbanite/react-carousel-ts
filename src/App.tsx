@@ -1,11 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Slider from "./components/Slider/Slider";
 
 function App() {
   return (
     <div className="App">
-      carousel
+      carousel demo
+      <Slider
+        autoPlay={true}
+        autoPlayTime={500}
+        width={'px'}
+        height={'px'}
+      />
     </div>
   );
 }
