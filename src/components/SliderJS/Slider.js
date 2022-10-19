@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
 import fetchImages from "../../API/imagesApi";
-// import styles from './Slider.module.scss'
 import Arrows from "./Arrows/Arrows";
 import Dots from "./Dots/Dots";
 import SlidesList from "./SlidesList/SlidesList";
@@ -13,6 +12,7 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
   const [slide, setSlide] = useState(0);
   const [touchPosition, setTouchPosition] = useState(null)
 
+  //fetch images
   useEffect(() => {
     const loadData = async () => {
       const images = await fetchImages();
@@ -64,6 +64,7 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
     setTouchPosition(null);
   }
 
+  //autoplay
   useEffect(() => {
     if (!autoPlay) return;
 
