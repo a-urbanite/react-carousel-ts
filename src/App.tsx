@@ -1,15 +1,15 @@
-import Slider from "./components/Slider/Slider";
+// import { default as SliderTS } from "./components/SliderTS/Slider" ;
+import { default as SliderJS } from "./components/SliderJS/Slider" ;
 
 function App() {
   return (
     <div className="App">
-      carousel demo
-      <Slider
-        autoPlay={true}
-        autoPlayTime={500}
-        width={'px'}
-        height={'px'}
-      />
+      <h1>carousel demo</h1>
+      <div className="container">
+        <SliderJS
+          autoPlay={false}
+        />
+      </div>
     </div>
   );
 }
