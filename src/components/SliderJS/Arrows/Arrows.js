@@ -1,7 +1,5 @@
 import { useContext } from "react";
 import { SliderContext } from "../Slider";
-
-// import styles from "./Arrows.module.scss";
 import '../styles.scss'
 
 const Arrows = () => {

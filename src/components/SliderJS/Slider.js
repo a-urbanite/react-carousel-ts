@@ -25,6 +25,8 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
   const changeSlide = (direction = 1) => {
     let slideNumber = 0;
 
+    // console.log("slide in changeSlide func", slide, "direction if given", direction)
+
     if (slide + direction < 0) {
       slideNumber = items.length - 1;
     } else {
@@ -36,12 +38,14 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
   };
 
   const goToSlide = (number) => {
-    setSlide(number % items.length);
+    // console.log("gotToSlide triggered, number", number, " items.length", items.length, " , func result: ", number % items.length)
+    setSlide(number);
   };
 
+  // handle touch gestures
   const handleTouchStart = (e) => {
     const touchDown = e.touches[0].clientX;
-    console.log("touchstart: ", touchDown)
+    // console.log("touchstart: ", touchDown)
 
     setTouchPosition(touchDown);
   }
@@ -52,7 +56,7 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
     }
 
     const currentPosition = e.touches[0].clientX;
-    console.log("currentPos: ", currentPosition)
+    // console.log("currentPos: ", currentPosition)
     const direction = touchPosition - currentPosition;
 
     if (direction > 10) {
@@ -66,7 +70,7 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
     setTouchPosition(null);
   }
 
-  //autoplay
+  // handle autoplay
   useEffect(() => {
     if (!autoPlay) return;
 

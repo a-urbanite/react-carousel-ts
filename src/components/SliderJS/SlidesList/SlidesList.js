@@ -6,8 +6,6 @@ import "../styles.scss";
 export default function SlidesList() {
   const { slideNumber, items } = useContext(SliderContext);
 
-  // console.log(slideNumber)
-
   return (
     <div
       className="slide-list"

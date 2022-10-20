@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { SliderContext } from "../Slider";
+import Dot from "./Dot/Dot";
+
+import "../styles.scss";
 
 const Dots = () => {
-  return (
-    <div>Dots</div>
-  )
-}
+  const { slidesCount } = useContext(SliderContext);
 
-export default Dots
+  const renderDots = () => {
+    const dots = [];
+    for (let i = 0; i < slidesCount; i++) {
+      dots.push(<Dot key={`dot-${i}`} number={i} />);
+    }
+
+    return dots;
+  };
+
+  return <div className="dots">{renderDots()}</div>;
+
+  }
+
+  export default Dots;
