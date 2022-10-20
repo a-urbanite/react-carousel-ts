@@ -41,6 +41,7 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
 
   const handleTouchStart = (e) => {
     const touchDown = e.touches[0].clientX;
+    console.log("touchstart: ", touchDown)
 
     setTouchPosition(touchDown);
   }
@@ -51,6 +52,7 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
     }
 
     const currentPosition = e.touches[0].clientX;
+    console.log("currentPos: ", currentPosition)
     const direction = touchPosition - currentPosition;
 
     if (direction > 10) {
@@ -93,9 +95,9 @@ const Slider = ({autoPlay = true, autoPlayTime = 500, width = '100%', height = '
           items,
         }}
       >
-        <Arrows />
         <SlidesList />
         <Dots />
+        <Arrows />
       </SliderContext.Provider>
     </div>
   );

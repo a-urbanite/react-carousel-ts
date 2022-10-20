@@ -6,7 +6,7 @@ import "../../styles.scss";
 
 export default function Slide({ data }) {
   // data: { url, title }
-  console.log(data)
+  // console.log(data)
   return (
     <div className="slide">
       <SlideImage src={data.urls.regular} alt={'title'} />
